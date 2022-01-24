@@ -1,0 +1,41 @@
+class Solution:
+    def detectCapitalUse(self, word: str) -> bool:
+        cap_count = 0
+        # finding number of UPPERCASE in given string
+        for i in word:
+            if i >='A' and i<= 'Z':
+                cap_count += 1
+                
+        if cap_count == 0: # All lowercase
+            return True
+        if cap_count ==1 and word[0]>='A' and word[0]<='Z': # If only first letter is UPPERCASE
+            return True
+        if cap_count == len(word): # If all letters are uppercase
+            return True
+        return False
+        
+'''
+        We define the usage of capitals in a word to be right when one of the following cases holds:
+
+All letters in this word are capitals, like "USA".
+All letters in this word are not capitals, like "leetcode".
+Only the first letter in this word is capital, like "Google".
+Given a string word, return true if the usage of capitals in it is right.
+
+ 
+
+Example 1:
+
+Input: word = "USA"
+Output: true
+Example 2:
+
+Input: word = "FlaG"
+Output: false
+ 
+
+Constraints:
+
+1 <= word.length <= 100
+word consists of lowercase and uppercase English letters.
+'''
