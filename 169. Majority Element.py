@@ -10,6 +10,13 @@ class Solution:
                     elem = i
                     break
         return elem
+        '''Faster Approach
+        nums.sort()
+        if len(nums)>2:
+            return nums[len(nums)//2]
+        else:
+            return nums[0]
+        '''
     
     
     
