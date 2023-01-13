@@ -47,3 +47,28 @@ public:
 
 
 
+
+
+// IN PLACE
+
+class Solution {
+public:
+    vector<int> decode(vector<int>& encoded, int first) {
+    
+    int t = encoded[0]; //t = 6
+    encoded[0] = first; //encoded[0] = 4
+    int t2;
+    encoded.resize(encoded.size()+1);
+    // cout<<encoded.size();
+    for(int i =1; i<encoded.size(); ++i)
+    {
+        t2 = encoded[i]; // 2 
+        encoded[i] = encoded[i-1] ^ t; // 2
+        t = t2;
+        
+    }
+    cout<<encoded.size();
+    return encoded;
+    }
+
+};
